@@ -30,7 +30,7 @@
 
 int main () {
 
-    FILE * program = fopen ("program.f", "wb+");
+    FILE * program = fopen ("programa.f", "wb+");
     uint16_t programa[100] = {
         LDA, BX, 0x01, 0x64,
         MOV, AX, BX,
