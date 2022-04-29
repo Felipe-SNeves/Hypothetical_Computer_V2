@@ -3,7 +3,7 @@
 
 #### Overview
 
-This is my second study about computer organization and their respective architecture. In this version, I improved the hypothetical computer created on the first study. Unfortunately, I deleted the first code when I was trying to write a readme file for the repository. To put both version in perspective, I'll briefly describe how the first machine was implemented.
+This is my second study about computer organization and their respective architecture. In this version, I improved the hypothetical computer created on the first study. Unfortunately, I deleted the first code when I was trying to write a readme file for the repository. To put both versions in perspective, I'll briefly describe how the first machine was implemented.
 
 ### The first version
 
@@ -11,9 +11,9 @@ The first version was implemented using the C programming language, and it was m
 
 ### The second version
 
-The second machine, altought it's built over the first one, it didn't emerge from any process of refactoring, in contrast, it emerged from a process of rewrite of the code starting from scratch.
+The second machine, altought it was built over the first one, it didn't emerge from any process of refactoring, in contrast, it emerged from a process of rewrite the code from scratch.
 
-Now I'll describe the new features implemented on this version. Firstly, more registers were created: it has four general purpose registers (AX, BX, CX and DX, each one with 16 bits, divided into MSB and LSB) and four especific purpose registers (SP, IP, BP and EFLAGS). The EFLAGS register is composed by two bits, where the first one represents the zero flag, and the second represents the sign flag. The registers SP, BP and IP are pointers of eight bits address to the, now implemented, primary memory. SP, stands for stack pointer (the names were inspired in the x86 architecture), and it points to the top of the stack. In addition, BP (base pointer) points to the bottom of the stack and the IP (instruction pointer, it has the behavior of a PC register) points to the current statment which will be executed. It's relevant to mention that the machine doesn't has any types of segmentation registers or pipeline suport.
+Now, I'll describe the new features implemented on this version. Firstly, more registers were created: it has four general purpose registers (AX, BX, CX and DX, each one with 16 bits, divided into high byte and low byte) and four especific purpose registers (SP, IP, BP and EFLAGS). The EFLAGS register is composed by two bits, where the first one represents the zero flag, and the second represents the sign flag. The registers SP, BP and IP are pointers of eight bits address to the, now implemented, primary memory. SP, stands for stack pointer (the names were inspired in the x86 architecture), and it points to the top of the stack. In addition, BP (base pointer) points to the bottom of the stack and the IP (instruction pointer, it has the behavior of a PC register) points to the current statment which will be executed. It's relevant to mention that the machine doesn't has any types of segmentation registers or pipeline suport.
 
 The primary memory consists in a 64 KiB RAM (unfortunately, it can not be fully addressed, since the especific purpose registers points to only one byte of addressing. To point to all the memory area they had to point to two bytes and not to only one byte). Again, the fetch-decode-execute cycle isn't fully implemented, however, it's steps is much more visible and defined. Moreover, the programs must be coded in byte codes to be executed, which allowed a huge jump in the size and quality of the instruction set architecture.
 
